@@ -2364,6 +2364,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:16.12.0"],
             ["react-docgen-typescript-loader", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:3.6.0"],
             ["react-dom", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:16.12.0"],
+            ["react-popper", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:1.3.7"],
             ["ts-loader", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:6.2.1"],
             ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=273569"]
           ],
@@ -13267,6 +13268,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-popper", "virtual:6b7abd0f9dd6c3f03f1235b7534a43720c3a19f386e52c31381aa55485d1bfec40cd82a9ce482837b8f836360fafc3e7412e8b8be79e5611c3d9e5bbcd2481fe#npm:1.3.7"],
             ["@babel/runtime", "npm:7.8.4"],
             ["create-react-context", "virtual:c9ba804f71b9cbd7373e82f7adeea6bf2961456f567c9982217925ed85c8f88966cbecfa508ae0e118dc81d53a030ddb5d354652da4597e1621108d28cc847cf#npm:0.3.0"],
+            ["deep-equal", "npm:1.1.1"],
+            ["popper.js", "npm:1.16.1"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.12.0"],
+            ["typed-styles", "npm:0.0.7"],
+            ["warning", "npm:4.0.3"]
+          ],
+          "packagePeers": [
+            "react"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:1.3.7", {
+          "packageLocation": "./.yarn/$$virtual/react-popper-virtual-e20ab397bb/0/cache/react-popper-npm-1.3.7-db7a7cf94e-2.zip/node_modules/react-popper/",
+          "packageDependencies": [
+            ["react-popper", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:1.3.7"],
+            ["@babel/runtime", "npm:7.8.4"],
+            ["create-react-context", "virtual:367b7fb357337bf11b3843682aa6a88650b0057ff35c12cf7bf2b0aebf4617259c57b5b00233a1b33b7ee8bef749f11872421c145763994e4bf756697dc0c7a2#npm:0.3.0"],
             ["deep-equal", "npm:1.1.1"],
             ["popper.js", "npm:1.16.1"],
             ["prop-types", "npm:15.7.2"],

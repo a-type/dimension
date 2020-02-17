@@ -8,12 +8,12 @@ import React, {
   useState,
 } from 'react';
 import { useIdOrGenerated, useControlled } from '../internal/hooks';
-import { SelectionTrackingSystem } from '../../../core/src/SelectionTrackingSystem';
 import {
+  SelectionTrackingSystem,
   INITIAL_INDEX,
   SelectionTrackingChangeEvent,
   SelectionTrackingChangeEventType,
-} from '../../../core/dist';
+} from '@dimension/core';
 
 export type SelectionContextValue = {
   onSelect: (value?: string) => any;
@@ -159,7 +159,7 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
   const onSelect = useCallback(
     (key?: string) => {
       const resolvedValue = key || activeKey;
-      if (!key) {
+      if (!resolvedValue) {
         return; // TODO: verify assumption
       }
       selectionSystem.setSelectedKey(resolvedValue);

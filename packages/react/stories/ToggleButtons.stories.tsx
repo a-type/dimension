@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { RovingTabItem } from './RovingTabItem';
-import { RovingTabContainer } from '../contexts/rovingTab';
+import { RovingTabItem } from '../src/components/RovingTabItem';
+import { RovingTabContainer } from '../src/contexts/rovingTab';
 
 export default {
-  title: 'RovingTabItem',
-  component: RovingTabItem,
+  title: 'Toggle Buttons',
 };
 
 const ToggleButton = ({ value }: { value: string }) => (
   <RovingTabItem component="button" value={value} disabled={value === 'io'}>
-    {({ active, selected, disabled }) => (
+    {({ selected }) => (
       <span>
         {selected && '*'}
         {value}

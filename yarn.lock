@@ -1265,6 +1265,7 @@ __metadata:
     react: ^16.12.0
     react-docgen-typescript-loader: ^3.6.0
     react-dom: ^16.12.0
+    react-popper: ^1.3.7
     ts-loader: ^6.2.1
     typescript: ^3.7.5
   peerDependencies:
@@ -10757,7 +10758,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-popper@npm:^1.3.6":
+"react-popper@npm:^1.3.6, react-popper@npm:^1.3.7":
   version: 1.3.7
   resolution: "react-popper@npm:1.3.7"
   dependencies:
