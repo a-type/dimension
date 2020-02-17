@@ -23,6 +23,7 @@ export class SelectionTrackingChangeEvent extends Event {
   readonly orderingTree: DeepOrderingNode;
   readonly elementMap: ElementMap;
   readonly deepIndex: DeepIndex;
+  readonly selectedKey: string | null;
   /**
    * Passive changes represent updates which are a result of DOM structure
    * changes or initialization, not user interaction.
@@ -33,6 +34,7 @@ export class SelectionTrackingChangeEvent extends Event {
     orderingTree: DeepOrderingNode,
     elementMap: ElementMap,
     deepIndex: DeepIndex,
+    selectedKey: string | null,
     passive: boolean,
   ) {
     super(SelectionTrackingChangeEventType);
@@ -40,6 +42,7 @@ export class SelectionTrackingChangeEvent extends Event {
     this.elementMap = elementMap;
     this.deepIndex = deepIndex;
     this.passive = passive;
+    this.selectedKey = selectedKey;
   }
 
   get activeKey() {
@@ -57,7 +60,7 @@ export class SelectionTrackingChangeEvent extends Event {
 
 export type SelectionTrackingSystemInit = {
   /** optionally set an initially selected value */
-  initialSelectedKey?: string;
+  initialSelectedKey?: string | null;
   /** sets whether the item discovery will look in child selection systems for items */
   crossContainerBoundaries?: boolean;
   /** sets whether the active cursor will jump to the selected item when selection changes */
@@ -155,6 +158,7 @@ export class SelectionTrackingSystem extends EventTarget {
         this.$orderingTree,
         this.$elementMap,
         this.$activeIndex,
+        this.$selectedKey,
         true,
       ),
     );
@@ -311,6 +315,7 @@ export class SelectionTrackingSystem extends EventTarget {
           this.$orderingTree,
           this.$elementMap,
           this.$activeIndex,
+          this.$selectedKey,
           passive,
         ),
       );
@@ -336,6 +341,7 @@ export class SelectionTrackingSystem extends EventTarget {
         this.$orderingTree,
         this.$elementMap,
         this.$activeIndex,
+        this.$selectedKey,
         passive,
       ),
     );
@@ -354,14 +360,24 @@ export class SelectionTrackingSystem extends EventTarget {
           console.warn(
             `Selected key was set to ${newSelectedKey}, but an item with that key was not found in the DOM`,
           );
-          return;
+        } else {
+          // this is a passive operation
+          this.setActiveIndex(info.index, true);
         }
-        // this is a passive operation
-        this.setActiveIndex(info.index, true);
       } else {
         this.setActiveIndex([], true);
       }
     }
+
+    this.dispatchEvent(
+      new SelectionTrackingChangeEvent(
+        this.$orderingTree,
+        this.$elementMap,
+        this.$activeIndex,
+        this.$selectedKey,
+        true,
+      ),
+    );
   };
 
   /**

@@ -1351,7 +1351,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@dimension/core", "workspace:packages/core"],
             ["@types/node", "npm:13.7.1"],
             ["@types/react", "npm:16.9.19"],
+            ["react", null],
             ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=273569"]
+          ],
+          "packagePeers": [
+            "react"
           ],
           "linkType": "SOFT",
         }]
