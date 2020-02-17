@@ -13,14 +13,23 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "yarn tsc",
-    "watch": "yarn tsc --watch"
+    "watch": "yarn tsc --watch",
+    "storybook": "yarn start-storybook",
+    "storybook:build": "yarn build-storybook"
   },
   "dependencies": {
     "@dimension/core": "0.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^6.0.0-alpha.13",
     "@types/node": "^13.7.1",
     "@types/react": "^16.9.19",
+    "babel-loader": "^8.0.6",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "ts-loader": "^6.2.1",
     "typescript": "^3.7.5"
   },
   "license": "MIT",
