@@ -103,4 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-.yarn/
+# https://stackoverflow.com/a/58550620
+.yarn/unplugged/
+.yarn/build-state.yml

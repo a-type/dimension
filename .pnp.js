@@ -5474,7 +5474,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["evp_bytestokey", "npm:1.0.3"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -5499,7 +5499,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cipher-base", "npm:1.0.4"],
             ["des.js", "npm:1.0.1"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -5938,7 +5938,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["cipher-base", "npm:1.0.4"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -6468,7 +6468,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["inherits", "npm:2.0.4"],
             ["ripemd160", "npm:2.0.2"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.0"],
             ["sha.js", "npm:2.4.11"]
           ],
           "linkType": "HARD",
@@ -8830,7 +8830,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["hash-base", "npm:3.0.4"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -10969,7 +10969,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["md5.js", "npm:1.3.5"],
             ["hash-base", "npm:3.0.4"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -11259,7 +11259,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/minipass-npm-2.9.0-6335fbe4af-2.zip/node_modules/minipass/",
           "packageDependencies": [
             ["minipass", "npm:2.9.0"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.0"],
             ["yallist", "npm:3.1.1"]
           ],
           "linkType": "HARD",
@@ -12359,7 +12359,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["create-hmac", "npm:1.1.7"],
             ["ripemd160", "npm:2.0.2"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.0"],
             ["sha.js", "npm:2.4.11"]
           ],
           "linkType": "HARD",
@@ -12826,7 +12826,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-hash", "npm:1.2.0"],
             ["parse-asn1", "npm:5.1.5"],
             ["randombytes", "npm:2.1.0"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -13643,7 +13643,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["oauth-sign", "npm:0.9.0"],
             ["performance-now", "npm:2.1.0"],
             ["qs", "npm:6.5.2"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.0"],
             ["tough-cookie", "npm:2.5.0"],
             ["tunnel-agent", "npm:0.6.0"],
             ["uuid", "npm:3.4.0"]
@@ -14117,7 +14117,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["sha.js", "npm:2.4.11"],
             ["inherits", "npm:2.0.4"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -14992,7 +14992,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["minipass", "npm:2.9.0"],
             ["minizlib", "npm:1.3.3"],
             ["mkdirp", "npm:0.5.1"],
-            ["safe-buffer", "npm:5.1.2"],
+            ["safe-buffer", "npm:5.2.0"],
             ["yallist", "npm:3.1.1"]
           ],
           "linkType": "HARD",
@@ -15366,7 +15366,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tunnel-agent-npm-0.6.0-64345ab7eb-2.zip/node_modules/tunnel-agent/",
           "packageDependencies": [
             ["tunnel-agent", "npm:0.6.0"],
-            ["safe-buffer", "npm:5.1.2"]
+            ["safe-buffer", "npm:5.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -16128,7 +16128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/wide-align-npm-1.1.3-48c7d4953c-2.zip/node_modules/wide-align/",
           "packageDependencies": [
             ["wide-align", "npm:1.1.3"],
-            ["string-width", "npm:1.0.2"]
+            ["string-width", "npm:2.1.1"]
           ],
           "linkType": "HARD",
         }]
