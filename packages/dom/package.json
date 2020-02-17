@@ -1,0 +1,26 @@
+{
+  "name": "@dimension/dom",
+  "author": {
+    "name": "Grant Forrest",
+    "email": "gaforres@gmail.com",
+    "url": "https://github.com/a-type"
+  },
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "yarn tsc",
+    "watch": "yarn tsc --watch"
+  },
+  "dependencies": {
+    "@dimension/core": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "typescript": "^3.7.5"
+  },
+  "license": "MIT"
+}

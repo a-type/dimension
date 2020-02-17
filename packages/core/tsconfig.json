@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "target": "esnext",
+    "lib": ["dom", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "esModuleInterop": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "noImplicitAny": true,
+    "noImplicitReturns": true
+  },
+  "include": ["src", "../dom/src/internal/keyboard.ts"]
+}
