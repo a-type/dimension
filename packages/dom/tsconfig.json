@@ -15,5 +15,5 @@
     "noImplicitAny": true,
     "noImplicitReturns": true
   },
-  "include": ["src"]
+  "include": ["src", "../core/src/internal/keyboard.ts"]
 }

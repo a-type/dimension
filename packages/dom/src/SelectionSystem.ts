@@ -2,19 +2,15 @@ import {
   SelectionTrackingSystem,
   SelectionTrackingChangeEventType,
   SelectionTrackingChangeEvent,
-} from '@dimension/core';
-import { getSelectItemId } from './internal/ids';
-import {
+  generateId,
+  getSelectFocusElementId,
+  getSelectItemsContainerId,
   KEY_DATA_ATTRIBUTE,
   DISABLED_ATTRIBUTE,
   X_INDEX_DATA_ATTRIBUTE,
   Y_INDEX_DATA_ATTRIBUTE,
-} from './constants';
-import {
-  generateId,
-  getSelectFocusElementId,
-  getSelectItemsContainerId,
-} from './internal/ids';
+  getSelectItemId,
+} from '@dimension/core';
 
 const FOCUS_ELEMENT_CONTROLS_ATTRIBUTE = 'aria-controls';
 const CONTAINER_ACTIVE_DESCENDANT_ATTRIBUTE = 'aria-activedescendant';
@@ -24,8 +20,6 @@ export class SelectionSystem {
   private $focusElement: HTMLElement | null = null;
   /** DOM reference to the element which is the parent of all item elements */
   private $itemsContainerElement: HTMLElement | null = null;
-  /** the currently selected item's key */
-  private $selectedKey: string | null = null;
   /**
    * determines whether the cursor should follow when the value is
    * programmatically changed
@@ -33,7 +27,7 @@ export class SelectionSystem {
   private $activeOptionFollowsSelection: boolean = false;
 
   /** the guts of the selection tree and index movement logic */
-  private trackingSystem: SelectionTrackingSystem = new SelectionTrackingSystem();
+  private trackingSystem: SelectionTrackingSystem;
   /** mandatory unique ID used to construct element ids and link them */
   readonly id: string;
 
@@ -46,7 +40,9 @@ export class SelectionSystem {
     activeOptionFollowsSelection?: boolean;
     id?: string;
   }) {
-    this.$selectedKey = initialSelectedKey || null;
+    this.trackingSystem = new SelectionTrackingSystem({
+      initialSelectedKey,
+    });
     this.$activeOptionFollowsSelection = activeOptionFollowsSelection;
     this.id = id || generateId('select');
 
@@ -120,27 +116,10 @@ export class SelectionSystem {
   }
 
   get selectedKey() {
-    return this.$selectedKey;
+    return this.trackingSystem.selectedKey;
   }
   set selectedKey(selectedKey: string | null) {
-    this.$selectedKey = selectedKey;
-    // lookup and update selected key's index as the active index if desired
-    if (this.$activeOptionFollowsSelection) {
-      if (this.$selectedKey) {
-        const info = this.trackingSystem.findElementInfo(this.$selectedKey);
-        if (!info) {
-          // TODO: evaluate usefulness of warning
-          console.warn(
-            `Selected key was set to ${selectedKey}, but an item with that key was not found in the DOM`,
-          );
-          return;
-        }
-        // this is a passive operation
-        this.trackingSystem.setIndex(info.index, true);
-      } else {
-        this.trackingSystem.setIndex([], true);
-      }
-    }
+    this.trackingSystem.setSelectedKey(selectedKey);
   }
 
   addItem = (

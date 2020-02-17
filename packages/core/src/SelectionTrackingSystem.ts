@@ -55,11 +55,21 @@ export class SelectionTrackingChangeEvent extends Event {
   }
 }
 
+export type SelectionTrackingSystemInit = {
+  /** optionally set an initially selected value */
+  initialSelectedKey?: string;
+  /** sets whether the item discovery will look in child selection systems for items */
+  crossContainerBoundaries?: boolean;
+  /** sets whether the active cursor will jump to the selected item when selection changes */
+  activeOptionFollowsSelection?: boolean;
+};
+
 /**
- * The Selection Tracking System is an internal generalized system which
- * monitors the DOM tree, identifies selectable elements and maps them, and
- * manages the low-level movement of the selected index. It provides events
- * for changes in the selection tree and state.
+ * The Selection Tracking System is a generalized system which
+ * monitors the DOM tree, identifies selectable elements and maps them,
+ * manages the low-level movement of the active index, and tracks
+ * the currently selected item. It provides events for changes in the selection
+ * tree and state.
  */
 export class SelectionTrackingSystem extends EventTarget {
   /** the map of all selectable items in the DOM */
@@ -81,10 +91,21 @@ export class SelectionTrackingSystem extends EventTarget {
    * selection systems or not
    */
   private $crossContainerBoundaries: boolean = false;
+  /**
+   * Whether the active item cursor should jump to the selected item
+   * whenever the selected item changes.
+   */
+  private $activeOptionFollowsSelection: boolean = false;
 
-  constructor({ initialSelectedKey }: { initialSelectedKey?: string } = {}) {
+  constructor({
+    initialSelectedKey,
+    crossContainerBoundaries,
+    activeOptionFollowsSelection,
+  }: SelectionTrackingSystemInit = {}) {
     super();
     this.$selectedKey = initialSelectedKey || null;
+    this.$crossContainerBoundaries = !!crossContainerBoundaries;
+    this.$activeOptionFollowsSelection = !!activeOptionFollowsSelection;
   }
 
   /**
@@ -156,6 +177,22 @@ export class SelectionTrackingSystem extends EventTarget {
    */
   set crossContainerBoundaries(crossContainerBoundaries: boolean) {
     this.$crossContainerBoundaries = crossContainerBoundaries;
+  }
+
+  /**
+   * Whether the active cursor jumps to the selected item whenever
+   * the selected item changes
+   */
+  get activeOptionFollowsSelection() {
+    return this.$activeOptionFollowsSelection;
+  }
+
+  /**
+   * Set whether the active cursor jumps to the selected item whenever
+   * the selected item changes
+   */
+  set activeOptionFollowsSelection(activeOptionFollowsSelection: boolean) {
+    this.$activeOptionFollowsSelection = activeOptionFollowsSelection;
   }
 
   /**
@@ -266,7 +303,7 @@ export class SelectionTrackingSystem extends EventTarget {
    * interaction. Pass "true" to the passive param if the operation shouldn't
    * be considered a user interaction response.
    */
-  setIndex = (newIndex: DeepIndex, passive: boolean = false) => {
+  setActiveIndex = (newIndex: DeepIndex, passive: boolean = false) => {
     if (newIndex.length === 0) {
       this.$activeIndex = newIndex;
       this.dispatchEvent(
@@ -305,6 +342,29 @@ export class SelectionTrackingSystem extends EventTarget {
   };
 
   /**
+   * Updates the selected item by key
+   */
+  setSelectedKey = (newSelectedKey: string | null) => {
+    this.$selectedKey = newSelectedKey;
+    if (this.$activeOptionFollowsSelection) {
+      if (this.$selectedKey) {
+        const info = this.findElementInfo(this.$selectedKey);
+        if (!info) {
+          // TODO: evaluate usefulness of warning
+          console.warn(
+            `Selected key was set to ${newSelectedKey}, but an item with that key was not found in the DOM`,
+          );
+          return;
+        }
+        // this is a passive operation
+        this.setActiveIndex(info.index, true);
+      } else {
+        this.setActiveIndex([], true);
+      }
+    }
+  };
+
+  /**
    * Returns the total count of items
    */
   get itemCount() {
@@ -317,39 +377,43 @@ export class SelectionTrackingSystem extends EventTarget {
     moveType: 'next' | 'previous' | 'nextOrthogonal' | 'previousOrthogonal',
     wrap?: boolean,
   ) =>
-    this.setIndex(
+    this.setActiveIndex(
       getOffsetDeepIndex(this.$activeIndex, this.$orderingTree, moveType, wrap),
     );
 
   /**
-   * Moves the index to the next enabled item in the current file on the main axis.
+   * Moves the active index to the next enabled item in the current file on the main axis.
    */
   goToNext = (wrap?: boolean) => this.doOffsetIndexMove('next', wrap);
   /**
-   * Moves the index to the previous enabled item in the current file on the main axis.
+   * Moves the active index to the previous enabled item in the current file on the main axis.
    */
   goToPrevious = (wrap?: boolean) => this.doOffsetIndexMove('previous', wrap);
   /**
-   * Moves the index to the next enabled item in the current file on the orthogonal axis.
+   * Moves the active index to the next enabled item in the current file on the orthogonal axis.
    */
   goToNextOrthogonal = (wrap?: boolean) =>
     this.doOffsetIndexMove('nextOrthogonal', wrap);
   /**
-   * Moves the index to the previous enabled item in the current file on the
+   * Moves the active index to the previous enabled item in the current file on the
    * orthogonal axis.
    */
   goToPreviousOrthogonal = (wrap?: boolean) =>
     this.doOffsetIndexMove('previousOrthogonal', wrap);
   /**
-   * Moves the index down one level in the hierarchy, if the next level down exists and
+   * Moves the active index down one level in the hierarchy, if the next level down exists and
    * is enabled.
    */
   goDown = () =>
-    this.setIndex(getDownwardDeepIndex(this.$activeIndex, this.$orderingTree));
+    this.setActiveIndex(
+      getDownwardDeepIndex(this.$activeIndex, this.$orderingTree),
+    );
   /**
-   * Moves the index up one level in the hierarchy, if the previous level exists and
+   * Moves the active index up one level in the hierarchy, if the previous level exists and
    * is enabled.
    */
   goUp = () =>
-    this.setIndex(getUpwardDeepIndex(this.$activeIndex, this.$orderingTree));
+    this.setActiveIndex(
+      getUpwardDeepIndex(this.$activeIndex, this.$orderingTree),
+    );
 }

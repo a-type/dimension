@@ -13,10 +13,18 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "yarn tsc",
-    "watch": "yarn tsc --watch"
+    "watch": "yarn tsc --watch",
+    "docs": "yarn typedoc",
+    "test": "yarn jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.2",
     "@types/node": "^13.7.1",
+    "jest": "^25.1.0",
+    "typedoc": "next",
     "typescript": "^3.7.5"
   },
   "license": "MIT"

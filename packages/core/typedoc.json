@@ -1,0 +1,11 @@
+{
+  "inputFiles": ["./src/index.ts"],
+  "out": "docs/lib",
+  "excludeNotExported": true,
+  "excludeExternals": true,
+  "externalPattern": ["./src/internal/**/*"],
+  "mode": "library",
+  "categorizeByGroup": true,
+  "entryPoint": "\"index\"",
+  "readme": "none"
+}

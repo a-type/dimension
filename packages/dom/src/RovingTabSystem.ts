@@ -3,13 +3,12 @@ import {
   SelectionTrackingChangeEventType,
   SelectionTrackingChangeEvent,
   generateId,
+  getRovingTabContainerId,
 } from '@dimension/core';
 
 export class RovingTabSystem {
   /** DOM reference to the element which contains all selectable items */
   private $containerElement: HTMLElement | null = null;
-  /** the currently selected item's key */
-  private $selectedKey: string | null = null;
   /**
    * determines whether the cursor should follow when the value
    * is programmatically changed
@@ -17,7 +16,7 @@ export class RovingTabSystem {
   private $activeOptionFollowsSelection: boolean = false;
 
   /** the cuts of the selection tree and index movement logic */
-  private trackingSystem: SelectionTrackingSystem = new SelectionTrackingSystem();
+  private trackingSystem: SelectionTrackingSystem;
   /** mandatory unique ID used to construct element ids and link them */
   readonly id: string;
 
@@ -30,7 +29,9 @@ export class RovingTabSystem {
     activeOptionFollowsSelection?: boolean;
     id?: string;
   }) {
-    this.$selectedKey = initialSelectedKey || null;
+    this.trackingSystem = new SelectionTrackingSystem({
+      initialSelectedKey,
+    });
     this.$activeOptionFollowsSelection = activeOptionFollowsSelection;
     this.id = id || generateId('widget');
 
@@ -72,10 +73,9 @@ export class RovingTabSystem {
   }
 
   get selectedKey() {
-    return this.$selectedKey;
+    return this.trackingSystem.selectedKey;
   }
   set selectedKey(selectedKey: string | null) {
-    this.$selectedKey = selectedKey;
-    // lookup and update selected key's index as the active index if desired
+    this.trackingSystem.setSelectedKey(selectedKey);
   }
 }
