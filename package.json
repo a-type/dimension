@@ -11,7 +11,8 @@
     "build": "run-s build:*"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "homepage"
   ],
   "author": "Grant Forrest",
   "license": "MIT",

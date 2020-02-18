@@ -33,6 +33,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@dimension/react",
         "reference": "workspace:packages/react"
+      },
+      {
+        "name": "homepage",
+        "reference": "workspace:homepage"
       }
     ],
     "enableTopLevelFallback": true,
@@ -40,8 +44,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["@dimension/core", ["workspace:packages/core"]],
       ["@dimension/dom", ["workspace:packages/dom"]],
-      ["@dimension/react", ["workspace:packages/react"]],
-      ["dimension", ["workspace:."]]
+      ["@dimension/react", ["virtual:72b46fe19e7ea9895dff80e24c6803281149e29bc0db211fc57ec2c707c4623dca4ff7f1ae3de5eb19cb6671a0b655e488648fb34e3fd7a9af16c69b48add54c#workspace:packages/react", "workspace:packages/react"]],
+      ["dimension", ["workspace:."]],
+      ["homepage", ["workspace:homepage"]]
     ],
     "locationBlacklistData": [
     ],
@@ -2322,6 +2327,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@dimension/core", [
+        ["file:../packages/core::locator=homepage%40workspace%3Ahomepage", {
+          "packageLocation": "./.yarn/cache/@dimension-core-file-b62e8f4949-2.zip/node_modules/@dimension/core/",
+          "packageDependencies": [
+            ["@dimension/core", "file:../packages/core::locator=homepage%40workspace%3Ahomepage"]
+          ],
+          "linkType": "HARD",
+        }],
         ["workspace:packages/core", {
           "packageLocation": "./packages/core/",
           "packageDependencies": [
@@ -2351,6 +2363,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@dimension/react", [
+        ["virtual:72b46fe19e7ea9895dff80e24c6803281149e29bc0db211fc57ec2c707c4623dca4ff7f1ae3de5eb19cb6671a0b655e488648fb34e3fd7a9af16c69b48add54c#workspace:packages/react", {
+          "packageLocation": "./.yarn/$$virtual/@dimension-react-virtual-9b941c0729/1/packages/react/",
+          "packageDependencies": [
+            ["@dimension/react", "virtual:72b46fe19e7ea9895dff80e24c6803281149e29bc0db211fc57ec2c707c4623dca4ff7f1ae3de5eb19cb6671a0b655e488648fb34e3fd7a9af16c69b48add54c#workspace:packages/react"],
+            ["@babel/core", "npm:7.8.4"],
+            ["@dimension/core", "workspace:packages/core"],
+            ["@storybook/react", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:6.0.0-alpha.13"],
+            ["@types/node", "npm:13.7.1"],
+            ["@types/react", "npm:16.9.19"],
+            ["babel-loader", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:8.0.6"],
+            ["react", "npm:16.12.0"],
+            ["react-docgen-typescript-loader", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:3.6.0"],
+            ["react-dom", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:16.12.0"],
+            ["react-popper", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:1.3.7"],
+            ["ts-loader", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:6.2.1"],
+            ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=273569"]
+          ],
+          "packagePeers": [
+            "react"
+          ],
+          "linkType": "SOFT",
+        }],
         ["workspace:packages/react", {
           "packageLocation": "./packages/react/",
           "packageDependencies": [
@@ -2816,6 +2850,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@nodelib-fs.stat-npm-1.1.3-95bc1892a0-2.zip/node_modules/@nodelib/fs.stat/",
           "packageDependencies": [
             ["@nodelib/fs.stat", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@parcel/diagnostic", [
+        ["npm:2.0.0-nightly.117", {
+          "packageLocation": "./.yarn/cache/@parcel-diagnostic-npm-2.0.0-nightly.117-2029fbaeb3-2.zip/node_modules/@parcel/diagnostic/",
+          "packageDependencies": [
+            ["@parcel/diagnostic", "npm:2.0.0-nightly.117"],
+            ["json-source-map", "npm:0.6.1"],
+            ["nullthrows", "npm:1.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -3805,6 +3850,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:16.9.19"],
             ["@types/prop-types", "npm:15.7.3"],
             ["csstype", "npm:2.6.9"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:16.9.20", {
+          "packageLocation": "./.yarn/cache/@types-react-npm-16.9.20-36025609cc-2.zip/node_modules/@types/react/",
+          "packageDependencies": [
+            ["@types/react", "npm:16.9.20"],
+            ["@types/prop-types", "npm:15.7.3"],
+            ["csstype", "npm:2.6.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/react-dom", [
+        ["npm:16.9.5", {
+          "packageLocation": "./.yarn/cache/@types-react-dom-npm-16.9.5-99a0114129-2.zip/node_modules/@types/react-dom/",
+          "packageDependencies": [
+            ["@types/react-dom", "npm:16.9.5"],
+            ["@types/react", "npm:16.9.19"]
           ],
           "linkType": "HARD",
         }]
@@ -5234,6 +5298,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-runtime", "npm:6.26.0"],
             ["core-js", "npm:2.6.11"],
             ["regenerator-runtime", "npm:0.11.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["babel-types", [
+        ["npm:6.26.0", {
+          "packageLocation": "./.yarn/cache/babel-types-npm-6.26.0-165163b54c-2.zip/node_modules/babel-types/",
+          "packageDependencies": [
+            ["babel-types", "npm:6.26.0"],
+            ["babel-runtime", "npm:6.26.0"],
+            ["esutils", "npm:2.0.3"],
+            ["lodash", "npm:4.17.15"],
+            ["to-fast-properties", "npm:1.0.3"]
           ],
           "linkType": "HARD",
         }]
@@ -8916,6 +8993,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["homepage", [
+        ["workspace:homepage", {
+          "packageLocation": "./homepage/",
+          "packageDependencies": [
+            ["homepage", "workspace:homepage"],
+            ["@dimension/core", "file:../packages/core::locator=homepage%40workspace%3Ahomepage"],
+            ["@dimension/react", "virtual:72b46fe19e7ea9895dff80e24c6803281149e29bc0db211fc57ec2c707c4623dca4ff7f1ae3de5eb19cb6671a0b655e488648fb34e3fd7a9af16c69b48add54c#workspace:packages/react"],
+            ["@parcel/diagnostic", "npm:2.0.0-nightly.117"],
+            ["@types/node", "npm:13.7.1"],
+            ["@types/react", "npm:16.9.20"],
+            ["@types/react-dom", "npm:16.9.5"],
+            ["babel-types", "npm:6.26.0"],
+            ["parcel", "git@github.com:a-type/parcel.git#commit:939ce4196082e15c836f8a0fe7d07bd2cc041d20"],
+            ["react", "npm:16.12.0"],
+            ["react-dom", "virtual:e58134444ae5c4587e2f2859438b4f287e7e8f72fd907c79ed1bde8aa8a0ecfaf3a541f4707d862a8613a583da208b97272dd1a80a8d318c91f665d07095267d#npm:16.12.0"],
+            ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=273569"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["hosted-git-info", [
         ["npm:2.8.5", {
           "packageLocation": "./.yarn/cache/hosted-git-info-npm-2.8.5-1e85fc7ff5-2.zip/node_modules/hosted-git-info/",
@@ -10500,6 +10597,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["json-source-map", [
+        ["npm:0.6.1", {
+          "packageLocation": "./.yarn/cache/json-source-map-npm-0.6.1-b39446562b-2.zip/node_modules/json-source-map/",
+          "packageDependencies": [
+            ["json-source-map", "npm:0.6.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["json-stable-stringify-without-jsonify", [
         ["npm:1.0.1", {
           "packageLocation": "./.yarn/cache/json-stable-stringify-without-jsonify-npm-1.0.1-b65772b28b-2.zip/node_modules/json-stable-stringify-without-jsonify/",
@@ -11794,6 +11900,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["nullthrows", [
+        ["npm:1.1.1", {
+          "packageLocation": "./.yarn/cache/nullthrows-npm-1.1.1-3d1f817134-2.zip/node_modules/nullthrows/",
+          "packageDependencies": [
+            ["nullthrows", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["num2fraction", [
         ["npm:1.2.2", {
           "packageLocation": "./.yarn/cache/num2fraction-npm-1.2.2-dc0a0a80ad-2.zip/node_modules/num2fraction/",
@@ -12165,6 +12280,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["param-case", "npm:2.1.1"],
             ["no-case", "npm:2.3.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["parcel", [
+        ["git@github.com:a-type/parcel.git#commit:939ce4196082e15c836f8a0fe7d07bd2cc041d20", {
+          "packageLocation": "./.yarn/unplugged/parcel-git@github.com-c8af6e1b76/node_modules/parcel/",
+          "packageDependencies": [
+            ["parcel", "git@github.com:a-type/parcel.git#commit:939ce4196082e15c836f8a0fe7d07bd2cc041d20"]
           ],
           "linkType": "HARD",
         }]
@@ -15223,6 +15347,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["to-fast-properties", [
+        ["npm:1.0.3", {
+          "packageLocation": "./.yarn/cache/to-fast-properties-npm-1.0.3-63b1c80b67-2.zip/node_modules/to-fast-properties/",
+          "packageDependencies": [
+            ["to-fast-properties", "npm:1.0.3"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/to-fast-properties-npm-2.0.0-0dc60cc481-2.zip/node_modules/to-fast-properties/",
           "packageDependencies": [

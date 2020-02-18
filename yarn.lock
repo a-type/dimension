@@ -1242,6 +1242,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@dimension/core@file:../packages/core::locator=homepage%40workspace%3Ahomepage":
+  version: 0.1.0
+  resolution: "@dimension/core@file:../packages/core::locator=homepage%40workspace%3Ahomepage"
+  checksum: 2/ab7c33558e07bea79f23ca160f7cff6cdd6a4e12be470463964397dfb6414a7df4c80adce1198afe731afafceea3902cf50c520ae553eb7fb8b90e82cc1ce74a
+  languageName: node
+  linkType: hard
+
 "@dimension/dom@workspace:packages/dom":
   version: 0.0.0-use.local
   resolution: "@dimension/dom@workspace:packages/dom"
@@ -1625,6 +1632,16 @@ __metadata:
   version: 1.1.3
   resolution: "@nodelib/fs.stat@npm:1.1.3"
   checksum: 2/351499088e1b332e48a187e7d4b6bbbd84459970f5b4a7155dbd67ee4a5af766f5f2ca49ff19af8ee29cc16a130eafa7968b64f966498a7bf94d5d8032dd7ec0
+  languageName: node
+  linkType: hard
+
+"@parcel/diagnostic@npm:^2.0.0-alpha.3":
+  version: 2.0.0-nightly.117
+  resolution: "@parcel/diagnostic@npm:2.0.0-nightly.117"
+  dependencies:
+    json-source-map: ^0.6.1
+    nullthrows: ^1.1.1
+  checksum: 2/d9a0f6f9d35b03793bcc2f5eb7c726c3ec432cb5a4a8beb7b6a0257303c495027fa93f51a8c8b99f6de39f7d1b32bd0e8e1f1faae2c840b52cad0b9a960e975b
   languageName: node
   linkType: hard
 
@@ -2332,6 +2349,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:^16.9.5":
+  version: 16.9.5
+  resolution: "@types/react-dom@npm:16.9.5"
+  dependencies:
+    "@types/react": "*"
+  checksum: 2/aaba8685ba00bb1837968de82032a30868b16f7122a3529e91b01b57a2749b24d63eb692a3942212b5b29e77520a176751f4e38a08e17e7bf1c86a4782854531
+  languageName: node
+  linkType: hard
+
 "@types/react-textarea-autosize@npm:^4.3.3":
   version: 4.3.5
   resolution: "@types/react-textarea-autosize@npm:4.3.5"
@@ -2348,6 +2374,16 @@ __metadata:
     "@types/prop-types": "*"
     csstype: ^2.2.0
   checksum: 2/0517d996fd9e52d8bf0ed9d4890189344d1c8d893acdb4cb2a59fd5ce029a1e057ec7b2bed9d1891d62cf91fd4570ec70a37a47a6b056cb99f4473c34ff03249
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^16.9.20":
+  version: 16.9.20
+  resolution: "@types/react@npm:16.9.20"
+  dependencies:
+    "@types/prop-types": "*"
+    csstype: ^2.2.0
+  checksum: 2/8e88e657a53f7adefecfa4016570d1e261cb68f7b1b7977f57f214ea26c09282c3383bb17c9e617fe68a0f6f377b3bc4c6f27ba446a71720f824d8f55b1e7b1e
   languageName: node
   linkType: hard
 
@@ -3570,6 +3606,18 @@ __metadata:
     core-js: ^2.4.0
     regenerator-runtime: ^0.11.0
   checksum: 2/5010bf1d81e484d9c6a5b4e4c32564a0dc180c2dc5a65f999729c3cb63b9c6e805d3d10c19a4ccc2112bce084e39e51e52daf5c21df0141ce8e6e37727af2e0b
+  languageName: node
+  linkType: hard
+
+"babel-types@npm:^6.26.0":
+  version: 6.26.0
+  resolution: "babel-types@npm:6.26.0"
+  dependencies:
+    babel-runtime: ^6.26.0
+    esutils: ^2.0.2
+    lodash: ^4.17.4
+    to-fast-properties: ^1.0.3
+  checksum: 2/9fb4b712afe5c19bfd2ab77e9888062d1b4888be22d8b21934fee03dbbd6add8d89ce9e435b7321a1047776c14f713301666112a5c5e505cb673e88d63076cca
   languageName: node
   linkType: hard
 
@@ -6858,6 +6906,24 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"homepage@workspace:homepage":
+  version: 0.0.0-use.local
+  resolution: "homepage@workspace:homepage"
+  dependencies:
+    "@dimension/core": "file:../packages/core"
+    "@dimension/react": "workspace:packages/react"
+    "@parcel/diagnostic": ^2.0.0-alpha.3
+    "@types/node": ^13.7.1
+    "@types/react": ^16.9.20
+    "@types/react-dom": ^16.9.5
+    babel-types: ^6.26.0
+    parcel: "git@github.com:a-type/parcel.git"
+    react: ^16.12.0
+    react-dom: ^16.12.0
+    typescript: ^3.7.5
+  languageName: unknown
+  linkType: soft
+
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.5
   resolution: "hosted-git-info@npm:2.8.5"
@@ -8294,6 +8360,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"json-source-map@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "json-source-map@npm:0.6.1"
+  checksum: 2/664179fd574faafae523482613d21aa38d7e87e7f49c723f0efaa94c85b046874efd76c5a799187d6558a28b25a2c5c695b1700b544a79d5a87db3ad3a302c35
+  languageName: node
+  linkType: hard
+
 "json-stable-stringify-without-jsonify@npm:^1.0.1":
   version: 1.0.1
   resolution: "json-stable-stringify-without-jsonify@npm:1.0.1"
@@ -8563,7 +8636,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15":
+"lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: 2/aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5
@@ -9480,6 +9553,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"nullthrows@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "nullthrows@npm:1.1.1"
+  checksum: 2/47afb80d9784485fe69facb16207a9b3de09258f5c86d4c21680abb3708eb4d3e8b04c2df288938eb7e1a82be0b73b00b991ca3c20ccb8c00a12a5cdc3a08fb5
+  languageName: node
+  linkType: hard
+
 "num2fraction@npm:^1.2.2":
   version: 1.2.2
   resolution: "num2fraction@npm:1.2.2"
@@ -9803,6 +9883,13 @@ fsevents@^1.2.7:
   dependencies:
     no-case: ^2.2.0
   checksum: 2/2983386706e6c62205a5bc53f172c4393d21c2eb93e2779ae34cf26771498ea5f12464c7642834f4ea7c938dc49ef2e3d7b3d7f7ed393b7f88874cd7793e5462
+  languageName: node
+  linkType: hard
+
+"parcel@git@github.com:a-type/parcel.git":
+  version: 0.0.0
+  resolution: "parcel@git@github.com:a-type/parcel.git#commit:939ce4196082e15c836f8a0fe7d07bd2cc041d20"
+  checksum: 2/1bb2ebb4ca616269602ca7bb3b989635427ea4b1b5cba7fda6e2b2f061dc190f096e2b2297f8d83205a5cfab03105fb6d4fd1c54429f82fa937a6b51ff6c3d47
   languageName: node
   linkType: hard
 
@@ -12527,6 +12614,13 @@ resolve@1.1.7:
   version: 1.0.1
   resolution: "to-arraybuffer@npm:1.0.1"
   checksum: 2/23e72a6636e32fa992a4ad952564af136460b8b9ac603737fd8e7ecefe762284c4368f3f455b4252c95401cb2d3c8e356da1ef915a7c40152b62592ee38911c4
+  languageName: node
+  linkType: hard
+
+"to-fast-properties@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "to-fast-properties@npm:1.0.3"
+  checksum: 2/bfe41c936705c9d82ed21ac6f39384c323d860f74b55d2354bc511eeb5f5729849f70ea4c1fab8ad71ca5717fa184c94899778e4959ef09e7316708086cf04c6
   languageName: node
   linkType: hard
 
