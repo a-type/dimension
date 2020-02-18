@@ -8,7 +8,7 @@
  */
 export type DeepOrderingNode = {
   /**
-   * The intereactive selectable key of the node represented
+   * The dimension selectable key of the node represented
    * at this part of the tree. `null` means this is the root,
    * which is a virtual node that holds the collection of initially
    * selectable sibling children.
