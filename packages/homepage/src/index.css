@@ -15,9 +15,32 @@ code {
 :root {
   --color-white: #fff;
   --color-black: #080810;
+  --color-selected: #46c8fc;
+  --color-interactive: #ff956b;
 }
 
 body {
   background-color: var(--color-black);
   color: var(--color-white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a:focus,
+button:focus,
+div:focus,
+li:focus,
+td:focus {
+  outline: var(--color-white) solid 1px;
+  outline-offset: 4px;
+}
+
+a {
+  color: var(--color-interactive);
+}
+
+h1 {
+  font-weight: 100;
 }

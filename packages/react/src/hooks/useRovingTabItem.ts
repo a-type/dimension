@@ -131,10 +131,17 @@ export const useRovingTabItem = <T extends HTMLElement>(
     ],
   );
 
-  const handleClick = useCallback(() => {
-    if (disabled) return;
-    onSelect(key, value);
-  }, [onSelect, key, value, disabled]);
+  const handleClick = useCallback(
+    (ev: any) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (disabled) {
+        return;
+      }
+      onSelect(key, value);
+    },
+    [onSelect, key, value, disabled],
+  );
 
   const [manualXCoordinate, manualYCoordinate] = normalizeCoordinate(
     coordinate,

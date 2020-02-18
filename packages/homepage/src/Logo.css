@@ -1,18 +1,36 @@
 .logo-node {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 8px;
+  height: 8px;
   border-radius: 100%;
   background-color: var(--color-white);
   position: relative;
+  margin: auto;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
-.logo-node > .logo-node {
-  opacity: 0.5;
-  left: 64px;
-  top: 8px;
+.logo-node:focus {
+  outline: none;
+}
+
+.logo-node:focus::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid var(--color-white);
+  border-radius: 100%;
+}
+
+.logo-node.selected {
+  background-color: var(--color-selected);
 }
 
 .logo {
   position: relative;
+  gap: 32px;
 }

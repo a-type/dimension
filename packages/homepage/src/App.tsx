@@ -5,7 +5,13 @@ import { Logo } from './Logo';
 function App() {
   return (
     <div className="App">
-      <Logo />
+      <main className="App-container">
+        <Logo />
+        <h1>dimension</h1>
+        <section>
+          <a href="https://github.com/a-type/dimension">Github</a>
+        </section>
+      </main>
     </div>
   );
 }
