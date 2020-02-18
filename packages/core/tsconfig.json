@@ -3,7 +3,7 @@
     "declaration": true,
     "sourceMap": true,
     "outDir": "dist",
-    "target": "esnext",
+    "target": "es5",
     "lib": ["dom", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "esModuleInterop": true,

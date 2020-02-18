@@ -121,12 +121,12 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
       setSelectedKey(ev.selectedKey);
       setActiveKey(ev.activeKey);
     };
-    selectionSystem.addEventListener(
+    selectionSystem.on(
       SelectionTrackingChangeEventType,
       onSelectionChange as any,
     );
     return () =>
-      selectionSystem.removeEventListener(
+      void selectionSystem.off(
         SelectionTrackingChangeEventType,
         onSelectionChange as any,
       );

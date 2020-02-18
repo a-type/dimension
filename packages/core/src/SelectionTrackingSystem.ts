@@ -16,10 +16,11 @@ import {
   getDownwardDeepIndex,
   getUpwardDeepIndex,
 } from './internal/indexing';
+import { EventEmitter } from 'events';
 
 export const SelectionTrackingChangeEventType = 'SelectionTrackingChange' as const;
 
-export class SelectionTrackingChangeEvent extends Event {
+export class SelectionTrackingChangeEvent {
   readonly orderingTree: DeepOrderingNode;
   readonly elementMap: ElementMap;
   readonly deepIndex: DeepIndex;
@@ -37,7 +38,6 @@ export class SelectionTrackingChangeEvent extends Event {
     selectedKey: string | null,
     passive: boolean,
   ) {
-    super(SelectionTrackingChangeEventType);
     this.orderingTree = orderingTree;
     this.elementMap = elementMap;
     this.deepIndex = deepIndex;
@@ -74,7 +74,7 @@ export type SelectionTrackingSystemInit = {
  * the currently selected item. It provides events for changes in the selection
  * tree and state.
  */
-export class SelectionTrackingSystem extends EventTarget {
+export class SelectionTrackingSystem extends EventEmitter {
   /** the map of all selectable items in the DOM */
   private $orderingTree: DeepOrderingNode = {
     key: null,
@@ -153,7 +153,8 @@ export class SelectionTrackingSystem extends EventTarget {
     this.$activeIndex = newDeepIndex;
 
     // all mutation-originated change events are passive
-    this.dispatchEvent(
+    this.emit(
+      SelectionTrackingChangeEventType,
       new SelectionTrackingChangeEvent(
         this.$orderingTree,
         this.$elementMap,
@@ -310,7 +311,8 @@ export class SelectionTrackingSystem extends EventTarget {
   setActiveIndex = (newIndex: DeepIndex, passive: boolean = false) => {
     if (newIndex.length === 0) {
       this.$activeIndex = newIndex;
-      this.dispatchEvent(
+      this.emit(
+        SelectionTrackingChangeEventType,
         new SelectionTrackingChangeEvent(
           this.$orderingTree,
           this.$elementMap,
@@ -336,7 +338,8 @@ export class SelectionTrackingSystem extends EventTarget {
 
     this.$activeIndex = newIndex;
 
-    this.dispatchEvent(
+    this.emit(
+      SelectionTrackingChangeEventType,
       new SelectionTrackingChangeEvent(
         this.$orderingTree,
         this.$elementMap,
@@ -369,7 +372,8 @@ export class SelectionTrackingSystem extends EventTarget {
       }
     }
 
-    this.dispatchEvent(
+    this.emit(
+      SelectionTrackingChangeEventType,
       new SelectionTrackingChangeEvent(
         this.$orderingTree,
         this.$elementMap,

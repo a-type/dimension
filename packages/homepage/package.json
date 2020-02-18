@@ -1,0 +1,35 @@
+{
+  "name": "@dimension/homepage",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack-cli build",
+    "build:gh": "cross-env PUBLIC_PATH=/dimension/ webpack-cli build"
+  },
+  "dependencies": {
+    "@dimension/react": "0.1.0",
+    "cross-env": "^7.0.0",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.20",
+    "@types/react-dom": "^16.9.5",
+    "pnp-webpack-plugin": "^1.6.3"
+  },
+  "author": "",
+  "license": "ISC"
+}

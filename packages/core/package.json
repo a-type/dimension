@@ -27,5 +27,8 @@
     "typedoc": "next",
     "typescript": "^3.7.5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "events": "^3.1.0"
+  }
 }
