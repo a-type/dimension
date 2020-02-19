@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack-cli build",
-    "build:gh": "cross-env PUBLIC_PATH=/dimension/ webpack-cli build"
+    "build": "webpack-cli",
+    "build:gh": "cross-env PUBLIC_PATH=/dimension/ webpack-cli"
   },
   "dependencies": {
     "@dimension/react": "0.1.0",
