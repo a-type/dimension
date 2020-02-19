@@ -152,10 +152,10 @@ export const getKeyboardAction = (keyActions: KeyActions, keyCode: KeyCode) => {
 
 export const processKeyboardEvent = (
   implementations: {
-    goToNext: () => any;
-    goToPrevious: () => any;
-    goToNextOrthogonal: () => any;
-    goToPreviousOrthogonal: () => any;
+    goToNext: (wrap?: boolean) => any;
+    goToPrevious: (wrap?: boolean) => any;
+    goToNextOrthogonal: (wrap?: boolean) => any;
+    goToPreviousOrthogonal: (wrap?: boolean) => any;
     goUp: () => any;
     goDown: () => any;
     select: () => any;
@@ -166,6 +166,7 @@ export const processKeyboardEvent = (
     preventDefault: () => void;
     stopPropagation: () => void;
   },
+  wrap: boolean = false,
 ) => {
   const keyCode: KeyCode = event.keyCode;
   const action = getKeyboardAction(keyActions, keyCode);
@@ -181,16 +182,16 @@ export const processKeyboardEvent = (
       implementations.goUp();
       break;
     case Action.GoNext:
-      implementations.goToNext();
+      implementations.goToNext(wrap);
       break;
     case Action.GoPrevious:
-      implementations.goToPrevious();
+      implementations.goToPrevious(wrap);
       break;
     case Action.GoNextOrthogonal:
-      implementations.goToNextOrthogonal();
+      implementations.goToNextOrthogonal(wrap);
       break;
     case Action.GoPreviousOrthogonal:
-      implementations.goToPreviousOrthogonal();
+      implementations.goToPreviousOrthogonal(wrap);
       break;
     case Action.Select:
       implementations.select();

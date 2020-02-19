@@ -27,6 +27,7 @@ export type SelectionContextValue = {
   activeKey: string | null;
   containerRef: Ref<any>;
   id: string;
+  wrap: boolean;
 };
 
 const SelectionContext = createContext<SelectionContextValue>({
@@ -41,6 +42,7 @@ const SelectionContext = createContext<SelectionContextValue>({
   containerRef: null,
   activeKey: null,
   id: '',
+  wrap: true,
 });
 
 export default SelectionContext;
@@ -179,6 +181,7 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
     containerRef,
     id,
     selectedKey,
+    wrap: !noWrap,
   };
 
   return (

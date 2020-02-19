@@ -80,6 +80,7 @@ export const useSelectionFocusElement = (
     goToNextOrthogonal,
     onSelect,
     id: groupId,
+    wrap,
   } = useContext(SelectionContext);
 
   // TODO: use event callback (ref style)
@@ -98,6 +99,7 @@ export const useSelectionFocusElement = (
         },
         keyActions,
         event,
+        wrap,
       );
 
       onKeyDown && onKeyDown(event);

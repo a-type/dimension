@@ -15,7 +15,9 @@
     "build": "yarn tsc",
     "watch": "yarn tsc --watch",
     "storybook": "yarn start-storybook",
-    "storybook:build": "yarn build-storybook"
+    "storybook:build": "yarn build-storybook",
+    "test": "yarn jest",
+    "test:watch": "yarn jest --watch --bail"
   },
   "peerDependencies": {
     "react": "*"
@@ -25,10 +27,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
     "@storybook/react": "^6.0.0-alpha.13",
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^25.1.2",
     "@types/node": "^13.7.1",
     "@types/react": "^16.9.19",
+    "@types/testing-library__react": "^9.1.2",
     "babel-loader": "^8.0.6",
+    "jest": "^25.1.0",
     "react": "^16.12.0",
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",

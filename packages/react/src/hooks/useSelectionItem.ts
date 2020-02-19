@@ -42,12 +42,15 @@ export type SelectionItemOptions = {
   selectedProps?: GenericProps;
 };
 
+const defaultSelectedProps = { 'aria-selected': true };
+const defaultActiveProps = {};
+
 export const useSelectionItem = ({
   value,
   coordinate,
   disabled,
-  selectedProps,
-  activeProps,
+  selectedProps = defaultSelectedProps,
+  activeProps = defaultActiveProps,
 }: SelectionItemOptions) => {
   const key = useIdOrGenerated(value, 'selection-item');
 

@@ -86,9 +86,8 @@ export function useControlled<T>({
     newValue => {
       if (!isControlled) {
         setValue(newValue);
-      } else {
-        onChange && onChange(newValue);
       }
+      onChange && onChange(newValue);
     },
     [onChange],
   );

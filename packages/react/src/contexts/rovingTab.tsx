@@ -27,6 +27,7 @@ export type RovingTabContextValue = {
   activeKey: string | null;
   selectedKey: string | null;
   id: string | null;
+  wrap: boolean;
 };
 
 const RovingTabContext = createContext<RovingTabContextValue>({
@@ -40,6 +41,7 @@ const RovingTabContext = createContext<RovingTabContextValue>({
   activeKey: null,
   selectedKey: null,
   id: null,
+  wrap: true,
 });
 
 export default RovingTabContext;
@@ -171,6 +173,7 @@ export const RovingTabContainer = forwardRef<any, RovingTabContainerProps>(
       goToNextOrthogonal: selectionSystem.goToNextOrthogonal,
       goToPreviousOrthogonal: selectionSystem.goToPreviousOrthogonal,
       id,
+      wrap: !noWrap,
     };
 
     return (
