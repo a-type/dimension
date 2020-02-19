@@ -89,6 +89,7 @@ export const useRovingTabItem = <T extends HTMLElement>(
     goDown,
     goToNextOrthogonal,
     goToPreviousOrthogonal,
+    wrap,
   } = useContext(RovingTabContext);
   const key = useIdOrGenerated(value, 'item');
   const elementRef = useRef<T | null>(null);
@@ -114,6 +115,7 @@ export const useRovingTabItem = <T extends HTMLElement>(
         },
         keyActions,
         event,
+        wrap,
       );
     },
     [
