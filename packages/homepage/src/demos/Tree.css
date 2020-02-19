@@ -1,0 +1,28 @@
+.Tree {
+  width: 300px;
+  max-width: 900px;
+}
+
+.Tree,
+.Tree-subtree {
+  padding: 0;
+  display: block;
+}
+
+.Tree-item:focus {
+  outline: none;
+}
+
+.Tree-item {
+  padding: 8px;
+  text-align: left;
+}
+
+.Tree-item:focus > .Tree-label.active {
+  outline: var(--color-white) solid 1px;
+  outline-offset: 4px;
+}
+
+.Tree-label.selected {
+  background-color: var(--color-selected);
+}

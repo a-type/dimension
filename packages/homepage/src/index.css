@@ -36,6 +36,7 @@ section {
 
 a:focus,
 button:focus,
+input:focus,
 div:focus,
 li:focus,
 td:focus {

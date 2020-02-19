@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Logo } from './Logo';
 import { Select } from './demos/Select';
+import { Tree } from './demos/Tree';
 
 function App() {
   return (
@@ -21,7 +22,19 @@ function App() {
             with dimension, you can construct a variety of common interactive
             components using consistent and understandable patterns
           </p>
+          <p>from the obligatory auto-complete box...</p>
           <Select />
+          <p>...to a nested tree view.</p>
+          <Tree />
+        </section>
+        <section>
+          <p>ready to learn more?</p>
+          <a href="https://github.com/a-type/dimension/tree/master/packages/react">
+            get started with React
+          </a>{' '}
+          <a href="https://github.com/a-type/dimension/tree/master/packages/dom">
+            get started with DOM (TODO)
+          </a>
         </section>
       </main>
     </div>

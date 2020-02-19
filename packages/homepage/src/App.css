@@ -12,4 +12,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 64px;
+  margin-bottom: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
