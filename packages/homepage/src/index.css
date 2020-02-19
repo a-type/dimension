@@ -24,6 +24,12 @@ body {
   color: var(--color-white);
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }

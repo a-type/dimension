@@ -1,0 +1,28 @@
+.Select-input {
+  padding: 8px;
+}
+
+.Select-option {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  width: 100%;
+  text-align: start;
+  border: 3px solid var(--color-white);
+}
+.Select-option.active {
+  border: 3px solid var(--color-black);
+}
+.Select-option.selected {
+  background-color: var(--color-selected);
+}
+
+.Select-options {
+  left: 0;
+  right: 0;
+  padding: 8px 2px;
+  background: var(--color-white);
+  height: auto;
+}
