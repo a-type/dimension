@@ -1,5 +1,8 @@
 .Select-input {
   padding: 8px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
 }
 
 .Select-option {
