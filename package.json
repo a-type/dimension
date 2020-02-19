@@ -5,12 +5,15 @@
   "scripts": {
     "watch:core": "yarn workspace @dimension/core watch",
     "watch:react": "yarn workspace @dimension/react watch",
+    "watch:dom": "yarn workspace @dimension/dom watch",
     "watch": "run-p watch:*",
     "build:core": "yarn workspace @dimension/core build",
     "build:react": "yarn workspace @dimension/react build",
+    "build:dom": "yarn workspace @dimension/dom build",
     "build": "run-s build:*",
     "test:core": "yarn workspace @dimension/core test",
     "test:react": "yarn workspace @dimension/react test",
+    "test:dom": "yarn workspace @dimension/dom test",
     "test": "run-p test:*"
   },
   "workspaces": [

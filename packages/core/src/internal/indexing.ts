@@ -116,6 +116,9 @@ const fileIsAllDisabled = (file: DeepOrderingNode[] = []) =>
     true,
   );
 
+const getColumn = (parent: DeepOrderingNode, columnIndex: number) =>
+  parent.children.reduce((col, row) => [...col, row[columnIndex]], []);
+
 type IndexOffset =
   | 'previousOrthogonal'
   | 'nextOrthogonal'
@@ -164,10 +167,7 @@ export const getOffsetDeepIndex = (
   } else {
     // column
     const columnIndex = operantCurrentPosition[0];
-    const column = parent.children.reduce(
-      (col, row) => [...col, row[columnIndex]],
-      [],
-    );
+    const column = getColumn(parent, columnIndex);
     if (fileIsAllDisabled(column)) {
       // TODO: evaluate this behavior
       // don't move
@@ -242,14 +242,24 @@ export const getDownwardDeepIndex = (
 
 /**
  * Gets the closes valid index to a supplied deep index for
- * the given ordering tree. Closeness is evaluated from
- * root down, so if
+ * the given ordering tree.
+ *
+ * TODO: make this work with disabled items, and in general just work
+ * better
  */
 export const getClosestValidDeepIndex = (
   prospectiveIndex: DeepIndex,
   ordering: DeepOrderingNode,
-): DeepIndex =>
-  prospectiveIndex.reduce<DeepIndex>((rebuiltIndex, [nextX, nextY]) => {
+): DeepIndex => {
+  // special case: go up from nothing if there's something to go to
+  if (prospectiveIndex.length === 0) {
+    const firstLevel = resolveIndexLocation(ordering, [[0, 0]]);
+    if (!firstLevel?.disabled) {
+      return [[0, 0]];
+    }
+  }
+
+  return prospectiveIndex.reduce<DeepIndex>((rebuiltIndex, [nextX, nextY]) => {
     const level = resolveIndexLocation(ordering, rebuiltIndex);
 
     if (!level || !level.children.length) {
@@ -265,3 +275,4 @@ export const getClosestValidDeepIndex = (
       return [...rebuiltIndex, [closestX, closestY]];
     }
   }, []);
+};

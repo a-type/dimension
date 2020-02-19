@@ -7,13 +7,19 @@
   },
   "version": "0.1.0",
   "files": [
-    "dist"
+    "dist",
+    "dist-esm"
   ],
   "main": "./dist/index.js",
+  "module": "./dist-esm/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "yarn tsc",
-    "watch": "yarn tsc --watch",
+    "build:cjs": "yarn tsc",
+    "build:esm": "yarn tsc -m es6 --outDir dist-esm",
+    "build": "run-p build:*",
+    "watch:cjs": "yarn tsc --watch",
+    "watch:esm": "yarn tsc -m es6 --watch --outDir dist-esm",
+    "watch": "run-p watch:*",
     "storybook": "yarn start-storybook",
     "storybook:build": "yarn build-storybook",
     "test": "yarn jest",
