@@ -19,9 +19,9 @@ jobs:
       - run: rm -rf docs
       - run: mkdir docs
       - run: yarn workspace @dimension/homepage build:gh
-      - run: cp -r ./packages/homepage/dist ./docs
+      - run: cp -a ./packages/homepage/dist/. ./docs
       - run: yarn workspace @dimension/core docs
-      - run: cp -r ./packages/core/docs ./docs/api
+      - run: cp -a ./packages/core/docs/. ./docs/api
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v1.2.5
         with:
