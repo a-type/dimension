@@ -443,8 +443,10 @@ describe('indexing utils', () => {
         ).toEqual([[1, 0]]);
       });
 
-      test('resolves an empty index', () => {
-        expect(getClosestValidDeepIndex([], basicNestedStructure)).toEqual([]);
+      test('resolves an empty index to the first element', () => {
+        expect(getClosestValidDeepIndex([], basicNestedStructure)).toEqual([
+          [0, 0],
+        ]);
       });
 
       test('finds a close sibling', () => {
