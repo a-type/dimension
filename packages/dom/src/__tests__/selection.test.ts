@@ -6,7 +6,7 @@ import {
 import { KeyCode } from '@dimension/core';
 import { getByTestId, fireEvent, wait } from '@testing-library/dom';
 
-function getExampleDOM(onChange: (newValue: string) => void) {
+function getExampleDOM(onChange: (newValue: string | null) => void) {
   const root = document.createElement('div');
   root.innerHTML = `
     <input data-testid="input" />
@@ -21,6 +21,8 @@ function getExampleDOM(onChange: (newValue: string) => void) {
 
   const input = root.querySelector('input');
   const itemsContainer = root.querySelector('[data-testid="itemsContainer"]');
+  if (!itemsContainer)
+    throw new Error("Couldn't find the itemsContainer (check dom above)");
 
   system.focusElement = input;
   system.itemsContainerElement = itemsContainer as HTMLElement;

@@ -6,7 +6,7 @@ import {
 import { KeyCode } from '@dimension/core';
 import { getByTestId, fireEvent, wait } from '@testing-library/dom';
 
-function getExampleDOM(onChange: (newValue: string) => void) {
+function getExampleDOM(onChange: (newValue: string | null) => void) {
   const root = document.createElement('div');
   root.innerHTML = `
     <div data-testid="container">
@@ -19,6 +19,8 @@ function getExampleDOM(onChange: (newValue: string) => void) {
   );
 
   const container = root.querySelector('[data-testid="container"]');
+  if (!container)
+    throw new Error("Couldn't find the container (check the dom above)");
 
   system.containerElement = container as HTMLElement;
 
