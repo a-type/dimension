@@ -1,20 +1,24 @@
 {
   "name": "dimension",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "scripts": {
     "watch:core": "yarn workspace @dimension/core watch",
     "watch:react": "yarn workspace @dimension/react watch",
     "watch:dom": "yarn workspace @dimension/dom watch",
-    "watch": "run-p watch:*",
+    "watch": "yarn run run-p watch:*",
     "build:core": "yarn workspace @dimension/core build",
     "build:react": "yarn workspace @dimension/react build",
     "build:dom": "yarn workspace @dimension/dom build",
-    "build": "run-s build:*",
+    "build": "yarn run run-s build:*",
     "test:core": "yarn workspace @dimension/core test",
     "test:react": "yarn workspace @dimension/react test",
     "test:dom": "yarn workspace @dimension/dom test",
-    "test": "run-p test:*"
+    "test": "yarn run run-p test:*",
+    "release:core": "yarn workspace @dimension/core release",
+    "release:react": "yarn workspace @dimension/react release",
+    "release:dom": "yarn workspace @dimension/dom release",
+    "release": "yarn run run-s release:*"
   },
   "workspaces": [
     "packages/*",

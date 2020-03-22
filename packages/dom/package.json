@@ -21,7 +21,9 @@
     "watch:esm": "yarn tsc -m es6 --watch --outDir dist-esm",
     "watch": "run-p watch:*",
     "test": "yarn jest",
-    "test:watch": "yarn jest --watch --bail"
+    "test:watch": "yarn jest --watch --bail",
+    "prepublishOnly": "yarn run build",
+    "release": "npm publish --access public"
   },
   "dependencies": {
     "@dimension/core": "0.1.0",

@@ -23,7 +23,9 @@
     "storybook": "yarn start-storybook",
     "storybook:build": "yarn build-storybook",
     "test": "yarn jest",
-    "test:watch": "yarn jest --watch --bail"
+    "test:watch": "yarn jest --watch --bail",
+    "prepublishOnly": "yarn run build",
+    "release": "npm publish --access public"
   },
   "peerDependencies": {
     "react": "*"

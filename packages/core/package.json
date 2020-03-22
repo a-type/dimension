@@ -21,7 +21,9 @@
     "watch:esm": "yarn tsc -m es6 --watch --outDir dist-esm",
     "watch": "run-p watch:*",
     "docs": "yarn typedoc",
-    "test": "yarn jest"
+    "test": "yarn jest",
+    "prepublishOnly": "yarn run build",
+    "release": "npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
