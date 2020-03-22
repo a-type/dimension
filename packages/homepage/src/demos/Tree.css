@@ -9,6 +9,11 @@
   display: block;
 }
 
+.Tree-subtree {
+  margin-left: 24px;
+  margin-bottom: 0;
+}
+
 .Tree-item:focus {
   outline: none;
 }
@@ -17,7 +22,6 @@
   padding: 8px;
   text-align: left;
 }
-
 .Tree-item:focus > .Tree-label.active {
   outline: var(--color-white) solid 1px;
   outline-offset: 4px;

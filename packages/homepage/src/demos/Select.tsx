@@ -52,7 +52,7 @@ const SelectOptions = forwardRef((props: any, ref) => (
       height: props.open ? 150 : 0,
       padding: props.open ? '8px 2px' : '0px 0px',
       overflow: 'auto',
-      transition: '0.2s ease-in height, padding',
+      transition: '0.1s ease-out height, padding',
     }}
   />
 ));

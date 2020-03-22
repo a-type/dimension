@@ -80,6 +80,11 @@ export type SelectionProviderProps = {
    * If not provided, a random one will be used.
    */
   id?: string;
+  /**
+   * If set to true, this will disable the default behavior of scrolling
+   * to the active element when it changes.
+   */
+  disableScrollToActiveElement?: boolean;
 };
 
 /**
@@ -96,6 +101,7 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
     itemCount,
     value,
     id: providedId,
+    disableScrollToActiveElement = false,
     ...rest
   } = props;
 
@@ -122,6 +128,12 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
       // update stored state
       setSelectedKey(ev.selectedKey);
       setActiveKey(ev.activeKey);
+
+      if (!disableScrollToActiveElement) {
+        ev.activeElement?.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
     };
     selectionSystem.on(
       SelectionTrackingChangeEventType,
@@ -132,7 +144,7 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
         SelectionTrackingChangeEventType,
         onSelectionChange as any,
       );
-  }, [selectionSystem]);
+  }, [selectionSystem, disableScrollToActiveElement]);
 
   const containerRef = useCallback(
     (el: HTMLElement) => {

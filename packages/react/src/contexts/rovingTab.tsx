@@ -103,6 +103,11 @@ export const RovingTabContainer = forwardRef<any, RovingTabContainerProps>(
         // update stored state
         setSelectedKey(ev.selectedKey);
         setActiveKey(ev.activeKey);
+        if (!disableScrollIntoView) {
+          ev.activeElement?.scrollIntoView({
+            behavior: 'smooth',
+          });
+        }
       };
       selectionSystem.on(
         SelectionTrackingChangeEventType,
@@ -113,7 +118,7 @@ export const RovingTabContainer = forwardRef<any, RovingTabContainerProps>(
           SelectionTrackingChangeEventType,
           onSelectionChange as any,
         );
-    }, [selectionSystem]);
+    }, [selectionSystem, disableScrollIntoView]);
 
     // ref to the top level container element
     const containerRef = useCallback(
