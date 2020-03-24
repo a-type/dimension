@@ -1311,6 +1311,7 @@ __metadata:
     react-docgen-typescript-loader: ^3.6.0
     react-dom: ^16.12.0
     react-popper: ^1.3.7
+    smoothscroll-polyfill: ^0.4.4
     ts-loader: ^6.2.1
     typescript: ^3.7.5
   peerDependencies:
@@ -12765,6 +12766,13 @@ resolve@1.1.7:
     astral-regex: ^1.0.0
     is-fullwidth-code-point: ^2.0.0
   checksum: 2/7578393cac91c28f8cb5fa5df36b826ad62c9e66313d2547770db8401570fa8f4aa20cd84ef9244fa054d8e9cc6bfc02578784bb89b238d384b99f2728a35a6d
+  languageName: node
+  linkType: hard
+
+"smoothscroll-polyfill@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "smoothscroll-polyfill@npm:0.4.4"
+  checksum: 2/a2643f711caad9d31ff181c3be976430c32dfcc4c46d5652b86b4166ea8f3693341c0a61f13d57e93b803ac05ccb1a8e30830581686c5d125ab2875ff2fd0bce
   languageName: node
   linkType: hard
 

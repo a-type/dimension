@@ -2417,6 +2417,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-docgen-typescript-loader", "virtual:6fafbd959de591d44cbb2c9f04f055c1b3585a2ef86521b5171ca277ac3bc009f273d6f98b30133e9cc4add143cce9c0a6fd96b66a7640a99fb61f0bd4338cd8#npm:3.6.0"],
             ["react-dom", "virtual:1103a826fa2dba3a87998a80010730c19218a5ef0b02d3b23b753145269cec54defde33c0ce006d1525b7c3532ba26bc55d09255e269aa9c14d71a1c56b767b7#npm:16.12.0"],
             ["react-popper", "virtual:6fafbd959de591d44cbb2c9f04f055c1b3585a2ef86521b5171ca277ac3bc009f273d6f98b30133e9cc4add143cce9c0a6fd96b66a7640a99fb61f0bd4338cd8#npm:1.3.7"],
+            ["smoothscroll-polyfill", "npm:0.4.4"],
             ["ts-loader", "virtual:1103a826fa2dba3a87998a80010730c19218a5ef0b02d3b23b753145269cec54defde33c0ce006d1525b7c3532ba26bc55d09255e269aa9c14d71a1c56b767b7#npm:6.2.1"],
             ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=273569"]
           ],
@@ -2448,6 +2449,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-docgen-typescript-loader", "virtual:6fafbd959de591d44cbb2c9f04f055c1b3585a2ef86521b5171ca277ac3bc009f273d6f98b30133e9cc4add143cce9c0a6fd96b66a7640a99fb61f0bd4338cd8#npm:3.6.0"],
             ["react-dom", "virtual:1103a826fa2dba3a87998a80010730c19218a5ef0b02d3b23b753145269cec54defde33c0ce006d1525b7c3532ba26bc55d09255e269aa9c14d71a1c56b767b7#npm:16.12.0"],
             ["react-popper", "virtual:6fafbd959de591d44cbb2c9f04f055c1b3585a2ef86521b5171ca277ac3bc009f273d6f98b30133e9cc4add143cce9c0a6fd96b66a7640a99fb61f0bd4338cd8#npm:1.3.7"],
+            ["smoothscroll-polyfill", "npm:0.4.4"],
             ["ts-loader", "virtual:1103a826fa2dba3a87998a80010730c19218a5ef0b02d3b23b753145269cec54defde33c0ce006d1525b7c3532ba26bc55d09255e269aa9c14d71a1c56b767b7#npm:6.2.1"],
             ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=273569"]
           ],
@@ -15532,6 +15534,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ansi-styles", "npm:3.2.1"],
             ["astral-regex", "npm:1.0.0"],
             ["is-fullwidth-code-point", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["smoothscroll-polyfill", [
+        ["npm:0.4.4", {
+          "packageLocation": "./.yarn/cache/smoothscroll-polyfill-npm-0.4.4-69b5bb4bf7-2.zip/node_modules/smoothscroll-polyfill/",
+          "packageDependencies": [
+            ["smoothscroll-polyfill", "npm:0.4.4"]
           ],
           "linkType": "HARD",
         }]
