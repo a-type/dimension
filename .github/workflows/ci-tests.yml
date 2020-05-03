@@ -14,5 +14,12 @@ jobs:
           node-version: 12
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - run: yarn install
-      - run: yarn build
-      - run: yarn test
+      - run: yarn workspace @dimension/core build:cjs
+      - run: yarn workspace @dimension/core build:esm
+      - run: yarn workspace @dimension/dom build:cjs
+      - run: yarn workspace @dimension/dom build:esm
+      - run: yarn workspace @dimension/react build:cjs
+      - run: yarn workspace @dimension/react build:esm
+      - run: yarn workspace @dimension/core test
+      - run: yarn workspace @dimension/dom test
+      - run: yarn workspace @dimension/react test

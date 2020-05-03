@@ -16,10 +16,8 @@
   "scripts": {
     "build:cjs": "yarn tsc",
     "build:esm": "yarn tsc -m es6 --outDir dist-esm",
-    "build": "run-p build:*",
     "watch:cjs": "yarn tsc --watch",
     "watch:esm": "yarn tsc -m es6 --watch --outDir dist-esm",
-    "watch": "run-p watch:*",
     "test": "yarn jest",
     "test:watch": "yarn jest --watch --bail",
     "prepublishOnly": "yarn run build",

@@ -15,7 +15,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn build
+      - run: yarn workspace @dimension/core build:cjs
+      - run: yarn workspace @dimension/core build:esm
+      - run: yarn workspace @dimension/dom build:cjs
+      - run: yarn workspace @dimension/dom build:esm
+      - run: yarn workspace @dimension/react build:cjs
+      - run: yarn workspace @dimension/react build:esm
       - run: rm -rf docs
       - run: mkdir docs
       - run: yarn workspace @dimension/homepage build:gh
