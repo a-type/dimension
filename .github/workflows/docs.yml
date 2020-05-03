@@ -20,6 +20,7 @@ jobs:
       - run: mkdir docs
       - run: yarn workspace @dimension/homepage build:gh
       - run: cp -a ./packages/homepage/dist/. ./docs
+      - run: cp -a ./packages/homepage/docs/. ./docs/docs
       - run: yarn workspace @dimension/core docs
       - run: cp -a ./packages/core/docs/. ./docs/api
       - name: GitHub Pages

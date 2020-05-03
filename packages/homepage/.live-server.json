@@ -1,0 +1,5 @@
+{
+  "root": "/dimension/docs",
+  "port": 3000,
+  "watch": "./docs"
+}

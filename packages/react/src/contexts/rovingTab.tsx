@@ -49,8 +49,6 @@ export default RovingTabContext;
 export type RovingTabContainerProps = OverridableProps<
   {
     noWrap?: boolean;
-    observeDeep?: boolean;
-    itemCount?: number;
     value?: string | null;
     onChange?: (value: string | null) => any;
     /**
@@ -68,8 +66,6 @@ export const RovingTabContainer = forwardRef<any, RovingTabContainerProps>(
       noWrap,
       children,
       onChange,
-      observeDeep,
-      itemCount,
       value,
       component: CustomComponent = 'div',
       disableScrollIntoView,

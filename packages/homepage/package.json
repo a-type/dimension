@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack-cli",
-    "build:gh": "cross-env PUBLIC_PATH=/dimension/ webpack-cli"
+    "build:gh": "cross-env PUBLIC_PATH=/dimension/ webpack-cli",
+    "docs:serve": "live-server --mount=/dimension/docs:./docs --port=3000 --watch=./docs"
   },
   "dependencies": {
     "@dimension/react": "0.1.0",
@@ -28,7 +29,10 @@
     "@types/node": "^13.7.1",
     "@types/react": "^16.9.20",
     "@types/react-dom": "^16.9.5",
-    "pnp-webpack-plugin": "^1.6.3"
+    "docsify-cli": "^4.4.0",
+    "live-server": "^1.2.1",
+    "pnp-webpack-plugin": "^1.6.3",
+    "typedoc": "next"
   },
   "author": "",
   "license": "ISC"

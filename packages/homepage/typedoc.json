@@ -1,0 +1,5 @@
+{
+  "inputFiles": ["../core/src", "../react/src"],
+  "mode": "library",
+  "out": "docs"
+}

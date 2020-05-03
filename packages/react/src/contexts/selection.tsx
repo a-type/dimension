@@ -54,17 +54,6 @@ export type SelectionProviderProps = {
    */
   noWrap?: boolean;
   /**
-   * This is a performance optimization. If all the selectable items are direct
-   * DOM descendants of the container element, you can enable "shallow" mode to
-   * reduce the overhead of scanning the DOM for items.
-   */
-  shallow?: boolean;
-  /**
-   * If you are using virtualized items, you must provide the total number
-   * of items here to ensure selection works as expected.
-   */
-  itemCount?: number;
-  /**
    * Optionally provide a controlled value to the Selection system. The provided
    * value will be selected by default.
    */
@@ -97,8 +86,6 @@ export const SelectionProvider: FC<SelectionProviderProps> = props => {
     noWrap,
     children,
     onChange,
-    shallow,
-    itemCount,
     value,
     id: providedId,
     disableScrollToActiveElement = false,
