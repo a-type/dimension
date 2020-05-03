@@ -8,6 +8,6 @@ yarn workspace @dimension/react build:cjs
 yarn workspace @dimension/react build:esm
 rm -rf docs
 mkdir docs
-yarn workspace @dimension/homepage build:gh
+yarn workspace @dimension/homepage build
 cp -a ./packages/homepage/dist/. ./docs
 cp -a ./packages/homepage/docs/. ./docs/docs
