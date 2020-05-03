@@ -29,12 +29,9 @@ function App() {
         </section>
         <section>
           <p>ready to learn more?</p>
-          <a href="https://github.com/a-type/dimension/tree/master/packages/react">
-            get started with React
+          <a href="https://a-type.github.io/dimension/docs">
+            read the docs
           </a>{' '}
-          <a href="https://github.com/a-type/dimension/tree/master/packages/dom">
-            get started with DOM (TODO)
-          </a>
         </section>
       </main>
     </div>
