@@ -7023,6 +7023,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:25.1.3"],
             ["@types/node", "npm:13.7.1"],
             ["@types/testing-library__dom", "npm:6.12.1"],
+            ["@types/testing-library__jest-dom", "npm:5.0.3"],
             ["events", "npm:3.1.0"],
             ["jest", "npm:25.1.0"],
             ["typescript", "patch:typescript@npm%3A3.7.5#builtin<compat/typescript>::version=3.7.5&hash=8cac75"]
@@ -7075,6 +7076,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:25.1.2"],
             ["@types/node", "npm:13.7.1"],
             ["@types/react", "npm:16.9.20"],
+            ["@types/testing-library__jest-dom", "npm:5.0.3"],
             ["@types/testing-library__react", "npm:9.1.2"],
             ["babel-loader", "virtual:6fafbd959de591d44cbb2c9f04f055c1b3585a2ef86521b5171ca277ac3bc009f273d6f98b30133e9cc4add143cce9c0a6fd96b66a7640a99fb61f0bd4338cd8#npm:8.0.6"],
             ["jest", "npm:25.1.0"],
@@ -7107,6 +7109,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:25.1.2"],
             ["@types/node", "npm:13.7.1"],
             ["@types/react", "npm:16.9.20"],
+            ["@types/testing-library__jest-dom", "npm:5.0.3"],
             ["@types/testing-library__react", "npm:9.1.2"],
             ["babel-loader", "virtual:6fafbd959de591d44cbb2c9f04f055c1b3585a2ef86521b5171ca277ac3bc009f273d6f98b30133e9cc4add143cce9c0a6fd96b66a7640a99fb61f0bd4338cd8#npm:8.0.6"],
             ["jest", "npm:25.1.0"],
