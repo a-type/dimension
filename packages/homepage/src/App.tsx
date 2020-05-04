@@ -29,9 +29,7 @@ function App() {
         </section>
         <section>
           <p>ready to learn more?</p>
-          <a href="https://a-type.github.io/dimension/docs">
-            read the docs
-          </a>{' '}
+          <a href="/docs">read the docs</a>{' '}
         </section>
       </main>
     </div>
